@@ -1,19 +1,18 @@
 package com.PersonalTracker.Personal.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class Income {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,5 +22,9 @@ public class Income {
     private LocalDate date;
     private String category;
     private String description;
+
+    @OneToMany(mappedBy = "income", cascade = CascadeType.ALL)
+    private List<Expense> expense;
+
 
 }

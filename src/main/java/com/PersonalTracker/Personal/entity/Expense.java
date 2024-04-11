@@ -1,9 +1,6 @@
 package com.PersonalTracker.Personal.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,6 +20,10 @@ public class Expense {
     private String category;
     private LocalDate date;
     private Integer amount;
+
+    @ManyToOne
+    @JoinColumn(name="income_id")
+    private Income income;
 
 
 

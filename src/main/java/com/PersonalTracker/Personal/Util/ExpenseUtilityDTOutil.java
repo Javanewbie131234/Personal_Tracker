@@ -19,14 +19,14 @@ public class ExpenseUtilityDTOutil {
     }
 
     public static Expense convertToEntity(ExpenseDTO dto){
-        Expense expense = new Expense(
-                dto.id(),
-                dto.title(),
-                dto.description(),
-                dto.category(),
-                dto.date(),
-                dto.amount()
-        );
+        Expense expense = new Expense();
+                expense.setId(dto.id());
+                expense.setTitle(dto.title());
+                expense.setDescription(dto.description());
+                expense.setCategory(dto.category());
+                expense.setDate(dto.date());
+                expense.setAmount(dto.amount());
+
         return expense;
     }
 

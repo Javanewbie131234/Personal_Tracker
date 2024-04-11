@@ -18,14 +18,14 @@ public class IncomeUtility {
     }
 
     public static Income convertToEntity(IncomeDTO incomeDTO){
-        Income income = new Income(
-                incomeDTO.id(),
-                incomeDTO.title(),
-                incomeDTO.amount(),
-                incomeDTO.date(),
-                incomeDTO.category(),
-                incomeDTO.description()
-        );
+        Income income = new Income();
+                income.setId(incomeDTO.id());
+                income.setTitle(incomeDTO.title());
+                income.setAmount(incomeDTO.amount());
+                income.setDate(incomeDTO.date());
+                income.setCategory(incomeDTO.category());
+                income.setDescription(incomeDTO.description());
+
         return income;
     }
 
